@@ -9,17 +9,24 @@ class SearchDisplay extends StatelessWidget {
       top: false,
       child: ListView(
         children: [
+          const Padding(
+            padding: EdgeInsets.fromLTRB(16, 16, 16, 8),
+            child: Text(
+              'イベント検索',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
           Card(
             clipBehavior: Clip.antiAlias,
             elevation: 3,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(14),
             ),
-            child: SummaryCardContent(
-              color: const Color(0xFF2F93DD),
+            child: const SummaryCardContent(
+              color: Color(0xFF2F93DD),
               title: 'サークル見学\nまとめ',
               subtitle: 'いろんなサークルを\n見に行こう!',
-              imagePath: 'assets/images/circle.png',
+              imagePath: 'assets/images/circle_visit.png',
             ),
           ),
           Card(
@@ -29,10 +36,10 @@ class SearchDisplay extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
             ),
             child: const SummaryCardContent(
-              color: const Color(0xFFF47B22),
+              color: Color(0xFFF47B22),
               title: '履修登録相談\nまとめ',
               subtitle: '戦費や同級生に\n悩みを打ち明けよう!',
-              imagePath: 'assets/images/circle.png',
+              imagePath: 'assets/images/open_seminar.png',
             ),
           ),
           Card(
@@ -42,10 +49,10 @@ class SearchDisplay extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
             ),
             child: const SummaryCardContent(
-              color: const Color(0xFF48B98E),
+              color: Color(0xFF48B98E),
               title: '飲食店募集\nまとめ',
               subtitle: '気になった飲食店に\n行こう!',
-              imagePath: 'assets/images/circle.png',
+              imagePath: 'assets/images/festival_staff.png',
             ),
           ),
         ],
