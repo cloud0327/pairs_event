@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:event_pairs/tabpage.dart';
+import 'package:event_pairs/1-tab_page.dart';
 
 class LoginDisplay extends StatelessWidget {
   const LoginDisplay({super.key});

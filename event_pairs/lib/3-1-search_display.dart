@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:event_pairs/3-2-search_description.dart';
+import 'package:event_pairs/event_store.dart';
 
 class SearchDisplay extends StatelessWidget {
   const SearchDisplay({super.key});
@@ -16,49 +18,64 @@ class SearchDisplay extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            elevation: 3,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: const SummaryCardContent(
-              color: Color(0xFF2F93DD),
-              title: 'サークル見学\nまとめ',
-              subtitle: 'いろんなサークルを\n見に行こう!',
-              imagePath: 'assets/images/circle_visit.png',
-            ),
+          _eventCard(
+            context,
+            color: Color(0xFF2F93DD),
+            title: 'サークル見学\nまとめ',
+            subtitle: 'いろんなサークルを\n見に行こう!',
+            imagePath: 'assets/images/circle_visit.png',
+            category: EventCategory.circleVisit,
           ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            elevation: 3,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: const SummaryCardContent(
-              color: Color(0xFFF47B22),
-              title: '履修登録相談\nまとめ',
-              subtitle: '戦費や同級生に\n悩みを打ち明けよう!',
-              imagePath: 'assets/images/open_seminar.png',
-            ),
+          _eventCard(
+            context,
+            color: Color(0xFFF47B22),
+            title: '履修登録相談\nまとめ',
+            subtitle: '戦費や同級生に\n悩みを打ち明けよう!',
+            imagePath: 'assets/images/open_seminar.png',
+            category: EventCategory.openSeminar,
           ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            elevation: 3,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: const SummaryCardContent(
-              color: Color(0xFF48B98E),
-              title: '飲食店募集\nまとめ',
-              subtitle: '気になった飲食店に\n行こう!',
-              imagePath: 'assets/images/festival_staff.png',
-            ),
+          _eventCard(
+            context,
+            color: Color(0xFF48B98E),
+            title: '飲食店募集\nまとめ',
+            subtitle: '気になった飲食店に\n行こう!',
+            imagePath: 'assets/images/festival_staff.png',
+            category: EventCategory.foodRecruitment,
           ),
         ],
       ),
     );
   }
+}
+
+Widget _eventCard(
+  BuildContext context, {
+  required Color color,
+  required String title,
+  required String subtitle,
+  required String imagePath,
+  required EventCategory category,
+}) {
+  return Card(
+    clipBehavior: Clip.antiAlias,
+    elevation: 3,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+    child: InkWell(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder: (context) => EventListPage(category: category),
+          ),
+        );
+      },
+      child: SummaryCardContent(
+        color: color,
+        title: title,
+        subtitle: subtitle,
+        imagePath: imagePath,
+      ),
+    ),
+  );
 }
 
 class SummaryCardContent extends StatelessWidget {
@@ -106,7 +123,7 @@ class SummaryCardContent extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
-          Image.asset(imagePath, width: 72, height: 72, fit: BoxFit.cover),
+          Image.asset(imagePath, width: 60, height: 80, fit: BoxFit.cover),
         ],
       ),
     );

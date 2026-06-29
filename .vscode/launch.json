@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "event_pairs (Flutter iPhone 17 Pro)",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "${workspaceFolder}/event_pairs",
+      "program": "lib/main.dart",
+      "deviceId": "3ECEA459-F4A4-4749-B120-BBC6EB337861"
+    }
+  ]
+}
