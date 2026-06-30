@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:event_pairs/3-2-search_description.dart';
-import 'package:event_pairs/event_store.dart';
+import 'package:event_pairs/event_sample.dart';
 
 class SearchDisplay extends StatelessWidget {
   const SearchDisplay({super.key});

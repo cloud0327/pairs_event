@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:event_pairs/event_store.dart';
+import 'package:event_pairs/event_sample.dart';
 
 class EventListPage extends StatelessWidget {
   final EventCategory category;
