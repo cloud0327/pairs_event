@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:event_pairs/5-message.dart';
-import 'package:event_pairs/event_store.dart';
+import 'package:event_pairs/event_sample.dart';
 
 class MyPage extends StatelessWidget {
   const MyPage({super.key});

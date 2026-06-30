@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:event_pairs/event_store.dart';
+import 'package:event_pairs/event_sample.dart';
 import 'package:event_pairs/ollama_message_service.dart';
 
 class RecruitmentDisplay extends StatefulWidget {
